@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>해원고 시험 브라우저</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- 시험 화면 -->
+  <main id="exam-container">
+
+    <!-- 시험 사이트 -->
+    <iframe
+      id="exam-frame"
+      src="https://ihw.riroschool.kr/"
+      title="시험 페이지"
+      allow="fullscreen"
+    ></iframe>
+
+    <!-- 상단 도구 -->
+    <div id="toolbar">
+      <button
+        id="refresh-btn"
+        type="button"
+        title="새로고침"
+      >
+        ⟳
+      </button>
+
+      <button
+        id="exit-btn"
+        type="button"
+        title="종료"
+      >
+        ✕
+      </button>
+    </div>
+
+  </main>
+
+  <!-- 이탈 경고 -->
+  <div
+    id="warning-screen"
+    class="hidden"
+  >
+    <div class="warning-box">
+
+      <h1>시험 화면을 벗어났습니다</h1>
+
+      <p
+        id="exit-message"
+        class="warning-count"
+      >
+        이탈 1회째입니다.
+      </p>
+
+      <p class="warning-description">
+        이 행동은 기록되어 선생님께 전달됩니다.
+      </p>
+
+      <button
+        id="return-btn"
+        type="button"
+      >
+        시험 화면으로 돌아가기
+      </button>
+
+    </div>
+  </div>
+
+  <!-- 확인 모달 -->
+  <div
+    id="confirm-overlay"
+    class="hidden"
+  >
+    <div class="confirm-box">
+
+      <p id="confirm-message"></p>
+
+      <div class="confirm-buttons">
+        <button
+          id="confirm-ok"
+          type="button"
+        >
+          확인
+        </button>
+
+        <button
+          id="confirm-cancel"
+          type="button"
+        >
+          취소
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
